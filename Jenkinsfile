@@ -18,7 +18,7 @@ agent {label "dev"};
 
                 steps{
                     
-                        sh "docker  -t flask-webby ."
+                        sh "docker build -t flask-webby ."
 
                     }
 
