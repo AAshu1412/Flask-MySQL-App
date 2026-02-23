@@ -1,3 +1,4 @@
+@Library("ashu-lib") _
 pipeline{
 
 agent {label "dev"};
@@ -7,12 +8,20 @@ agent {label "dev"};
         stage("code"){
 
              steps{
-
-                       git url: "https://github.com/AAshu1412/Flask-MySQL-App", branch:"main"
-
+                        script{
+                                clone("https://github.com/AAshu1412/Flask-MySQL-App","main")
+                        }
                     }
 
                 }
+
+        stage("Truvy File System Scan"){
+                steps{
+                        script{
+                                trivy_fs()  
+                        }    
+                }
+        }
 
         stage("build"){
 
@@ -69,7 +78,7 @@ agent {label "dev"};
                         
                 }
                 failure{
-                        emailext subject:"Build Successful",
+                        emailext subject:"Build UnSuccessful",
                                   body:"Bad News",
                                   to: "ashutoshsanjeevmittal@gmail.com"
                         
