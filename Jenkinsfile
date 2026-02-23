@@ -73,7 +73,7 @@ agent {label "dev"};
                         emailtext(
                                 subject:"Build Successful",
                                 body:"Bad News",
-                                to: "sgurmehardeep@gmail.com"
+                                to: "ashutoshsanjeevmittal@gmail.com"
                         )
                 }
         }
