@@ -63,13 +63,13 @@ agent {label "dev"};
 
         post {
                 success{
-                        emailtext subject:"Build Successful",
+                        emailext subject:"Build Successful",
                                   body:"Good News",
                                   to: "ashutoshsanjeevmittal@gmail.com"
                         
                 }
                 failure{
-                        emailtext subject:"Build Successful",
+                        emailext subject:"Build Successful",
                                   body:"Bad News",
                                   to: "ashutoshsanjeevmittal@gmail.com"
                         
